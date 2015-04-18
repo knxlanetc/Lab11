@@ -94,21 +94,35 @@ void Heap<DataType,KeyType,Comparator>:: insert ( const DataType &newDataItem ) 
 	// YOUR CODE GOES HERE
     // Hint: you may want to use the 2 variables declared above (but you don't have to)
 	// Hint: call getPriority() to get the priority of a data item (e.g. newDataItem.getPriority())
+    else if (size==0){
+        dataItems[size]=newDataItem;
+        size++;
+    }
 
-    else(size<maxSize && size>=0){
+    else if (size<maxSize && size>0){
         DataType parent;
         DataType temp;
-        dataItems[size]=newDataItem;
-        parent = dataItems[(size-1)/2];
+        int x = size;
+        dataItems[x]=newDataItem;
+        DataType data=dataItems[x];
+        parent = dataItems[(x-1)/2];
 
-        for(int i = size; size>=0; size --){
-            if(newDataItem.getPriority() > parent.getPriority()){
-                temp=dataItems[size];
-                dataItems[size]=parent;
+        while(data.getPriority() > parent.getPriority()){
+
+                temp=dataItems[x];
+                dataItems[x]=parent;
                 parent = temp;
-                dataItems[(size-1)/2]=parent;
+                dataItems[(x-1)/2]=parent;
+                x=(x-1)/2;
+                if(x<0){
+                    break; }
+                else{
+                parent = dataItems[(x-1)/2];
+                }
             }
+            size++;
         }
+
     }
 
 
@@ -116,7 +130,7 @@ void Heap<DataType,KeyType,Comparator>:: insert ( const DataType &newDataItem ) 
 
 
 
-}
+
 
 //--------------------------------------------------------------------
 

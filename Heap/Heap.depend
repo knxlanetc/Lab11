@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1428702866 source:i:\junior\2ndsemester\c++\lab11\heap.cpp
+1429374610 source:i:\junior\2ndsemester\c++\lab11\heap.cpp
 	"Heap.h"
 
 1428698272 i:\junior\2ndsemester\c++\lab11\heap.h
@@ -12,7 +12,7 @@
 	<time.h>
 	"Heap.cpp"
 
-1428952402 i:\junior\2ndsemester\c++\lab11\heap.cpp
+1429376250 i:\junior\2ndsemester\c++\lab11\heap.cpp
 	"Heap.h"
 
 1428948932 source:i:\junior\2ndsemester\c++\lab11\test11.cpp
